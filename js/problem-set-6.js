@@ -189,6 +189,14 @@ function drawTriangle() {
 
 function drawSmileyFace() {
 
+var c=document.getElementById("canvas5")
+var draw = c.getContext("2d");
+
+let radius= Number(prompt("Please enter a radius."));
+draw.beginPath();
+draw.arc(10,10, radius, 0, Math.PI*2, true);
+draw.closePath();
+
 }
 
 /*
