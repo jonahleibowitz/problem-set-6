@@ -189,13 +189,35 @@ function drawTriangle() {
 
 function drawSmileyFace() {
 
-var c=document.getElementById("canvas5")
-var draw = c.getContext("2d");
+let radius;
 
-let radius= Number(prompt("Please enter a radius."));
-draw.beginPath();
-draw.arc(10,10, radius, 0, Math.PI*2, true);
-draw.closePath();
+while (true) {
+  radius= Number(prompt("Please enter a radius."));
+  if(radius>0 && radius<=250 && Number.isInteger(radius)){
+    break;
+    }
+    else{
+    alert("The smiley face will not fit on canvas.")
+  }
+}
+var c=document.getElementById("canvas5");
+var ctx=c.getContext("2d");
+//head
+ctx.beginPath();
+ctx.arc(200,200,radius,0,2*Math.PI);
+ctx.stroke();
+//eye1
+ctx.beginPath();
+ctx.arc(125,100,(radius*0.1),0,2*Math.PI);
+ctx.stroke();
+//eye2
+ctx.beginPath();
+ctx.arc(275,100,(radius*0.1),0,2*Math.PI);
+ctx.stroke();
+//mouth
+ctx.beginPath();
+ctx.arc(200,200,radius*0.7,0.1*Math.PI,0.9*Math.PI);
+ctx.stroke();
 
 }
 
@@ -292,5 +314,60 @@ function drawPyramid() {
  */
 
 function drawHouse() {
+  let houseChoice= prompt("Please choose a house color.");
+  let doorChoice= prompt("Please choose a door color.");
+    const canvas = document.getElementById('canvas9');
+    const ctx = canvas.getContext('2d');
+//house
+    let houseColor;
+     if(houseChoice==="black"){
+       houseColor="#000000";
+     }
+     if(houseChoice==="blue"){
+       houseColor="#0000FF";
+     }
+     if(houseChoice==="green"){
+       houseColor="#00FF40";
+     }
+     if(houseChoice==="orange"){
+       houseColor="#FF8000";
+     }
+     if(houseChoice==="purple"){
+       houseColor="#8000FF";
+     }
+     if(houseChoice==="red"){
+       houseColor="#FF0000";
+     }
+     if(houseChoice==="yellow"){
+       houseColor="#FFFF00";
+     }
+     ctx.fillStyle = houseColor;
+     ctx.fillRect(150, 350, 600, 500);
+//door
+     let doorColor;
+      if(doorChoice==="black"){
+        doorColor="#000000";
+      }
+      if(doorChoice==="blue"){
+        doorColor="#0000FF";
+      }
+      if(doorChoice==="green"){
+        doorColor="#00FF40";
+      }
+      if(doorChoice==="orange"){
+        doorColor="#FF8000";
+      }
+      if(doorChoice==="purple"){
+        doorChoiceColor="#8000FF";
+      }
+      if(doorChoice==="red"){
+        doorColor="#FF0000";
+      }
+      if(doorChoice==="yellow"){
+        doorColor="#FFFF00";
+      }
 
+
+    ctx.fillStyle = doorColor;
+    ctx.fillRect(400, 350, 100, 150);
 }
