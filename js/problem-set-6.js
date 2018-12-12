@@ -320,8 +320,8 @@ function drawHouse() {
     const ctx = canvas.getContext('2d');
 //house
     let houseColor;
-     if(houseChoice==="black"){
-       houseColor="#000000";
+     if(houseChoice==="brown"){
+       houseColor="#654500";
      }
      if(houseChoice==="blue"){
        houseColor="#0000FF";
@@ -345,8 +345,8 @@ function drawHouse() {
      ctx.fillRect(150, 350, 600, 500);
 //door
      let doorColor;
-      if(doorChoice==="black"){
-        doorColor="#000000";
+      if(doorChoice==="brown"){
+        doorColor="#654500";
       }
       if(doorChoice==="blue"){
         doorColor="#0000FF";
@@ -366,8 +366,24 @@ function drawHouse() {
       if(doorChoice==="yellow"){
         doorColor="#FFFF00";
       }
+      ctx.fillStyle = doorColor;
+      ctx.fillRect(400, 620, 100, 150);
+//window1
+let windowColor="#00F7FF"
+ctx.fillStyle =windowColor;
+ctx.fillRect(250, 400, 75, 75);
+//window2
+let window2Color="#00F7FF"
+ctx.fillStyle =window2Color;
+ctx.fillRect(575, 400, 75, 75);
+//window3
+let window3Color="#00F7FF"
+ctx.fillStyle =window3Color;
+ctx.fillRect(250, 550, 75, 75);
+//window4
+let window4Color="#00F7FF"
+ctx.fillStyle =window4Color;
+ctx.fillRect(575, 550, 75, 75);
 
 
-    ctx.fillStyle = doorColor;
-    ctx.fillRect(400, 350, 100, 150);
 }
