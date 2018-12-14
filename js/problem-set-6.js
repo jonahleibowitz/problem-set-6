@@ -166,6 +166,23 @@ let colorChoice= prompt("Please choose color.");
 
 function drawTriangle() {
 
+const canvas = document.getElementById("canvas4");
+const ctx = canvas.getContext('2d');
+
+let leftSide= Number(prompt("Please enter left side length."));
+let bottomSide= Number(prompt("Please enter bottom side length."));
+let hypotenuse= Number(prompt("Please enter hypotenuse."));
+if((leftSide**2)+(bottomSide**2)!=(hypotenuse**2)){
+  alert("That is not a valid right triangle");
+}
+else {
+ctx.beginPath();
+    ctx.moveTo(10,10);
+    ctx.lineTo(10,(10+leftSide));
+    ctx.lineTo((10+bottomSide),(10+leftSide));
+    ctx.closePath();
+    ctx.stroke();
+  }
 }
 
 /*
