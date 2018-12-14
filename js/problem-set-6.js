@@ -14,6 +14,7 @@ function sayHello() {
 
   const canvas = document.getElementById('canvas1');
   const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   ctx.font = "48px Arial";
   ctx.strokeText("Hello, World!",10,50);
@@ -68,10 +69,13 @@ while(true){
     break;
   }
 }
+
   const canvas = document.getElementById('canvas2');
   const ctx = canvas.getContext('2d');
+
   ctx.rect(coordX, coordY, width, height);
   ctx.stroke();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 /*
@@ -104,6 +108,7 @@ function drawColoredRectangle() {
 let colorChoice= prompt("Please choose color.");
   const canvas = document.getElementById('canvas3');
   const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   let rectColor;
    if(colorChoice==="black"){
@@ -168,6 +173,7 @@ function drawTriangle() {
 
 const canvas = document.getElementById("canvas4");
 const ctx = canvas.getContext('2d');
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 let leftSide= Number(prompt("Please enter left side length."));
 let bottomSide= Number(prompt("Please enter bottom side length."));
@@ -183,6 +189,7 @@ ctx.beginPath();
     ctx.closePath();
     ctx.stroke();
   }
+
 }
 
 /*
@@ -205,7 +212,7 @@ ctx.beginPath();
  */
 
 function drawSmileyFace() {
-
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 let radius;
 
 while (true) {
@@ -217,8 +224,10 @@ while (true) {
     alert("The smiley face will not fit on canvas.")
   }
 }
+
 var c=document.getElementById("canvas5");
 var ctx=c.getContext("2d");
+
 //head
 ctx.beginPath();
 ctx.arc(200,200,radius,0,2*Math.PI);
@@ -258,6 +267,20 @@ ctx.stroke();
 
 function drawStar() {
 
+let outerRad= Number(prompt("Choose outer radius."));
+let innerRad= Number(prompt("Choose inner radius."));
+
+ctx.beginPath();
+ctx.fillStyle = "#C40043";
+ctx.arc(100, 100, 100, 0, Math.PI * 2);
+ctx.fill();
+
+ctx.fillStyle = "yellow";
+drawStar(ctx, 100, 100, 9, 90, 50);
+ctx.fill();
+
+var c=document.getElementById("canvas6");
+var ctx=c.getContext("2d");
 }
 
 /*
@@ -276,7 +299,7 @@ function drawStar() {
  */
 
 function drawStopSign() {
-
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 /*
@@ -298,7 +321,7 @@ function drawStopSign() {
  */
 
 function drawPyramid() {
-
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 /*
@@ -335,6 +358,18 @@ function drawHouse() {
   let doorChoice= prompt("Please choose a door color.");
     const canvas = document.getElementById('canvas9');
     const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+//roof
+ctx.beginPath();
+    ctx.moveTo(100,350);
+    ctx.lineTo(800,350);
+    ctx.lineTo(450,100);
+    ctx.closePath();
+    ctx.fillStyle ="#808080";
+    ctx.fill();
+
+
+
 //house
     let houseColor;
      if(houseChoice==="brown"){
@@ -396,11 +431,11 @@ ctx.fillRect(575, 400, 75, 75);
 //window3
 let window3Color="#00F7FF"
 ctx.fillStyle =window3Color;
-ctx.fillRect(250, 550, 75, 75);
+ctx.fillRect(250, 620, 75, 75);
 //window4
 let window4Color="#00F7FF"
 ctx.fillStyle =window4Color;
-ctx.fillRect(575, 550, 75, 75);
+ctx.fillRect(575, 620, 75, 75);
 
 
 }
