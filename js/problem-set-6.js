@@ -427,7 +427,7 @@ ctx.beginPath();
         doorColor="#FF8000";
       }
       if(doorChoice==="purple"){
-        doorChoiceColor="#8000FF";
+        doorColor="#8000FF";
       }
       if(doorChoice==="red"){
         doorColor="#FF0000";
