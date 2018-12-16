@@ -300,6 +300,23 @@ var ctx=c.getContext("2d");
 
 function drawStopSign() {
 ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  var numberOfSides = 8,
+    size = 20,
+    Xcenter = 25,
+    Ycenter = 25;
+ 
+cxt.beginPath();
+cxt.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));          
+ 
+for (var i = 1; i <= numberOfSides;i += 1) {
+    cxt.lineTo (Xcenter + size * Math.cos(i * 2 * Math.PI / numberOfSides), Ycenter + size * Math.sin(i * 2 * Math.PI / numberOfSides));
+}
+ 
+cxt.strokeStyle = "#000000";
+  cxt.fillStyle= "#FF0000"
+cxt.lineWidth = 1;
+cxt.stroke();
 }
 
 /*
