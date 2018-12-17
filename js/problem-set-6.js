@@ -280,7 +280,6 @@ let radiusIn= Number(prompt("Enter valid inner radius."));
   if (radiusOut>radiusIn && canvas.width>=radiusOut+125 && canvas.height>=radiusOut+125 && radiusIn>0 && radiusOut>0){
       
  let spikes = 5;
-    
      function drawStar(cx,cy,spikes,radiusOut,radiusIn){
       var rot=Math.PI/2*3;
       var x=cx;
@@ -306,9 +305,8 @@ let radiusIn= Number(prompt("Enter valid inner radius."));
     }
 
     drawStar(125,125,5,30,15);
-    
-    
-    
+  } else {
+  alert("Please enter valid inputs.");
   }
 }
 
