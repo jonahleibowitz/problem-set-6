@@ -302,11 +302,7 @@ let radiusIn= Number(prompt("Enter valid inner radius."));
       }
       ctx.lineTo(cx,cy-radiusOut);
       ctx.closePath();
-      ctx.lineWidth=5;
-      ctx.strokeStyle='blue';
       ctx.stroke();
-      ctx.fillStyle='skyblue';
-      ctx.fill();
     }
 
     drawStar(125,125,5,30,15);
