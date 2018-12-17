@@ -45,6 +45,9 @@ function sayHello() {
 
 function drawRectangle() {
 
+  const canvas = document.getElementById('canvas2');
+  const ctx = canvas.getContext('2d');
+ctx.clearRect(0, 0, canvas.width, canvas.height);
 let coordX= Number(prompt("Please enter an X coordinate greater than or equal to 5."));
 while(true){
   if(coordX>=5 && coordX<=1024 && Number.isInteger(coordX)){
@@ -70,12 +73,11 @@ while(true){
   }
 }
 
-  const canvas = document.getElementById('canvas2');
-  const ctx = canvas.getContext('2d');
+
 
   ctx.rect(coordX, coordY, width, height);
   ctx.stroke();
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 }
 
 /*
@@ -212,6 +214,9 @@ ctx.beginPath();
  */
 
 function drawSmileyFace() {
+
+  const canvas=document.getElementById("canvas5");
+  const ctx=canvas.getContext("2d");
 ctx.clearRect(0, 0, canvas.width, canvas.height);
 let radius;
 
@@ -224,25 +229,23 @@ while (true) {
     alert("The smiley face will not fit on canvas.")
   }
 }
-
-var c=document.getElementById("canvas5");
-var ctx=c.getContext("2d");
-
+let x= canvas.width;
+let y= canvas.height;
 //head
 ctx.beginPath();
-ctx.arc(200,200,radius,0,2*Math.PI);
+ctx.arc(x/2,y/2,radius,0,2*Math.PI);
 ctx.stroke();
 //eye1
 ctx.beginPath();
-ctx.arc(125,100,(radius*0.1),0,2*Math.PI);
+ctx.arc(x/2-(radius/3),y/2-(radius/4),(radius*0.1),0,2*Math.PI);
 ctx.stroke();
 //eye2
 ctx.beginPath();
-ctx.arc(275,100,(radius*0.1),0,2*Math.PI);
+ctx.arc(x/2+(radius/3),y/2-(radius/4),(radius*0.1),0,2*Math.PI);
 ctx.stroke();
 //mouth
 ctx.beginPath();
-ctx.arc(200,200,radius*0.7,0.1*Math.PI,0.9*Math.PI);
+ctx.arc(x/2,y/2,radius*0.7,0.1*Math.PI,0.9*Math.PI);
 ctx.stroke();
 
 }
@@ -267,6 +270,10 @@ ctx.stroke();
 
 function drawStar() {
 
+  var c=document.getElementById("canvas6");
+  var ctx=c.getContext("2d");
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 let outerRad= Number(prompt("Choose outer radius."));
 let innerRad= Number(prompt("Choose inner radius."));
 
@@ -279,8 +286,6 @@ ctx.fillStyle = "yellow";
 drawStar(ctx, 100, 100, 9, 90, 50);
 ctx.fill();
 
-var c=document.getElementById("canvas6");
-var ctx=c.getContext("2d");
 }
 
 /*
@@ -300,19 +305,19 @@ var ctx=c.getContext("2d");
 
 function drawStopSign() {
 ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
+
   var numberOfSides = 8,
     size = 20,
     Xcenter = 25,
     Ycenter = 25;
- 
+
 cxt.beginPath();
-cxt.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));          
- 
+cxt.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));
+
 for (var i = 1; i <= numberOfSides;i += 1) {
     cxt.lineTo (Xcenter + size * Math.cos(i * 2 * Math.PI / numberOfSides), Ycenter + size * Math.sin(i * 2 * Math.PI / numberOfSides));
 }
- 
+
 cxt.strokeStyle = "#000000";
   cxt.fillStyle= "#FF0000"
 cxt.lineWidth = 1;
@@ -384,9 +389,6 @@ ctx.beginPath();
     ctx.closePath();
     ctx.fillStyle ="#808080";
     ctx.fill();
-
-
-
 //house
     let houseColor;
      if(houseChoice==="brown"){
