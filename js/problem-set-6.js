@@ -321,24 +321,40 @@ let radiusIn= Number(prompt("Enter valid inner radius."));
  */
 
 function drawStopSign() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
+ let canvas = document.getElementById('canvas7');
+  let ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  let sideLength= 80;
+ let center;
+  
+  let points=8;
+  let pointX=[];
+  let pointY=[];
+  
+   for(let i=0;i<8;i++){
+    pointX.push(Math.cos(((Math.PI*2*i)/points)-Math.PI/8)*100+center[0]);
+    pointY.push(Math.sin(((Math.PI*2*i)/points)-Math.PI/8)*100+center[1]);
+   }
+   ctx.beginPath();
+  ctx.moveTo([pointx][0], pointy[0]);
+  for(let j=0;j<pointx.length;j++){
+    ctx.lineTo(pointx[j], pointy[j]);
+  }
+  ctx.lineTo(pointx[0], pointy[0]);
+  ctx.stroke();
 
-  var numberOfSides = 8,
-    size = 20,
-    Xcenter = 25,
-    Ycenter = 25;
-
-cxt.beginPath();
-cxt.moveTo (Xcenter +  size * Math.cos(0), Ycenter +  size *  Math.sin(0));
-
-for (var i = 1; i <= numberOfSides;i += 1) {
-    cxt.lineTo (Xcenter + size * Math.cos(i * 2 * Math.PI / numberOfSides), Ycenter + size * Math.sin(i * 2 * Math.PI / numberOfSides));
+  ctx.fillStyle="red";
+  ctx.fill();
+  ctx.closePath();
+  ctx.beginPath();
+  ctx.font="56px Georgia";
+  ctx.fillStyle="white";
+  ctx.fillText("STOP", center[0], center[1]+15);
+  ctx.closePath()
 }
-
-cxt.strokeStyle = "#000000";
-  cxt.fillStyle= "#FF0000"
-cxt.lineWidth = 1;
-cxt.stroke();
+  
+  
 }
 
 /*
