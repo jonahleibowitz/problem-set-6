@@ -354,9 +354,6 @@ function drawStopSign() {
   ctx.fillText("STOP", center[0], center[1]+15);
   ctx.closePath()
 }
-  
-  
-}
 
 /*
  * Pyramid. 7 points.
