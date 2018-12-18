@@ -377,7 +377,28 @@ function drawStopSign() {
  */
 
 function drawPyramid() {
-ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+   let canvas = document.getElementById('canvas8');
+  let ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+ let blockSide= Number(prompt("Please choose block length."));
+  
+  let coordX= 10;
+  let coordY= canvas.height-10;
+  let i=0;
+  blockSide=1;
+  while(i<5){
+    for(let j=0+blockSide;j<=5;j++){
+      ctx.strokeRect(coordX,coordY-blockSide,blockSide,blockSide);
+      coordX+=blockSide;
+    }
+     x=10+(sideLength/2)*lineNumber;
+    y-=sideLength;
+    lineNumber++;
+    i++;
+  }
+
 }
 
 /*
