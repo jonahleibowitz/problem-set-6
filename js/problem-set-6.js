@@ -510,6 +510,11 @@ ctx.fillRect(250, 620, 75, 75);
 let window4Color="#00F7FF"
 ctx.fillStyle =window4Color;
 ctx.fillRect(575, 620, 75, 75);
-
+//doorknob
+  let doorknobColor= "#FFFF00"
+  ctx.beginPath();
+ctx.arc(600,450,15,0,2*Math.PI);
+ctx.stroke();
+  ctx.fillStyle=doorknobColor;
 
 }
