@@ -279,32 +279,27 @@ let radiusOut= Number(prompt("Enter valid outer radius."));
 let radiusIn= Number(prompt("Enter valid inner radius."));
   if (radiusOut>radiusIn && canvas.width>=radiusOut+125 && canvas.height>=radiusOut+125 && radiusIn>0 && radiusOut>0){
       
- let spikes = 5;
-     function drawStar(cx,cy,spikes,radiusOut,radiusIn){
-      var rot=Math.PI/2*3;
-      var x=cx;
-      var y=cy;
-      var step=Math.PI/spikes;
-
-      ctx.beginPath();
-      ctx.moveTo(cx,cy-radiusOut)
-      for(i=0;i<spikes;i++){
-        x=cx+Math.cos(rot)*radiusOut;
-        y=cy+Math.sin(rot)*radiusOut;
-        ctx.lineTo(x,y)
-        rot+=step
-
-        x=cx+Math.cos(rot)*radiusIn;
-        y=cy+Math.sin(rot)*radiusIn;
-        ctx.lineTo(x,y)
-        rot+=step
-      }
-      ctx.lineTo(cx,cy-radiusOut);
-      ctx.closePath();
-      ctx.stroke();
-    }
-
-    drawStar(125,125,5,30,15);
+    let points= 5;
+    let xout=[];
+    let yout=[];
+    let xin=[];
+    let yin=[];
+        for(let i=0;i<points;i++){
+          xout.push(Math.cos((Math.PI*2*i)/points-(Math.PI/2))*radiusOut+125);
+          yout.push(Math.sin((Math.PI*2*i)/points-(Math.PI/2))*radiusOut+125);
+          xin.push(Math.cos(((Math.PI*2*i)/points)-(Math.PI/2)+(Math.PI/points))*radiusIn+125);
+          yin.push(Math.sin(((Math.PI*2*i)/points)-(Math.PI/2)+(Math.PI/points))*radiusIn+125);
+     }
+        ctx.beginPath();
+        ctx.moveTo(xout[0], yout[0]);
+        for(let j=0;j<xout.length;j++){
+          ctx.lineTo(xin[j], yin[j]);
+          ctx.lineTo(xout[j+1], yout[j+1]);
+        }
+        ctx.lineTo(xout[0], yout[0]);
+        ctx.stroke();
+        ctx.closePath();
+    
   } else {
   alert("Please enter valid inputs.");
   }
