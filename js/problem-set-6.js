@@ -394,6 +394,7 @@ function drawPyramid() {
     y-=sideLength;
     lineNumber++;
     i++;
+  }
 }
 
 /*
