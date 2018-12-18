@@ -348,7 +348,7 @@ function drawStopSign() {
   ctx.closePath();
   ctx.beginPath();
   ctx.textAlign="center";
-  ctx.font="56px Georgia";
+  ctx.font="56px Arial";
   ctx.fillStyle="white";
   ctx.fillText("STOP", center[0], center[1]+15);
   ctx.closePath()
@@ -509,9 +509,10 @@ ctx.fillStyle =window4Color;
 ctx.fillRect(575, 620, 75, 75);
 //doorknob
   let doorknobColor= "#FFFF00"
-  ctx.beginPath();
-ctx.arc(600,450,15,0,2*Math.PI);
-ctx.stroke();
   ctx.fillStyle=doorknobColor;
+  ctx.beginPath();
+ctx.arc(480,695,5,0,2*Math.PI);
+ctx.stroke();
+  
 
 }
