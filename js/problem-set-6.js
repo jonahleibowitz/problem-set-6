@@ -381,21 +381,19 @@ function drawPyramid() {
   
  let blockSide= Number(prompt("Please choose block length."));
   
-  let coordX= 10;
-  let coordY= canvas.height-10;
+ let x=10;
+  let y=canvas.height-10;
   let i=0;
-  blockSide=1;
+  lineNumber=1;
   while(i<5){
-    for(let j=0+blockSide;j<=5;j++){
-      ctx.strokeRect(coordX,coordY-blockSide,blockSide,blockSide);
-      coordX+=blockSide;
+    for(let j=0+lineNumber;j<=5;j++){
+      ctx.strokeRect(x,y-sideLength,sideLength,sideLength);
+      x+=sideLength;
     }
-     x=10+(sideLength/2)*lineNumber;
+    x=10+(sideLength/2)*lineNumber;
     y-=sideLength;
     lineNumber++;
     i++;
-  }
-
 }
 
 /*
@@ -510,9 +508,8 @@ ctx.fillRect(575, 620, 75, 75);
 //doorknob
   let doorknobColor= "#FFFF00"
   ctx.fillStyle=doorknobColor;
+  ctx.fill();
   ctx.beginPath();
 ctx.arc(480,695,5,0,2*Math.PI);
 ctx.stroke();
-  
-
 }
