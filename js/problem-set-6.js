@@ -48,6 +48,7 @@ function drawRectangle() {
   const canvas = document.getElementById('canvas2');
   const ctx = canvas.getContext('2d');
 ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
 let coordX= Number(prompt("Please enter an X coordinate greater than or equal to 5."));
 while(true){
   if(coordX>=5 && coordX<=1024 && Number.isInteger(coordX)){
@@ -72,9 +73,6 @@ while(true){
     break;
   }
 }
-
-
-
   ctx.rect(coordX, coordY, width, height);
   ctx.stroke();
 
