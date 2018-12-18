@@ -438,6 +438,7 @@ ctx.beginPath();
     ctx.closePath();
     ctx.fillStyle ="#808080";
     ctx.fill();
+  ctx.stroke();
 //house
     let houseColor;
      if(houseChoice==="brown"){
@@ -463,6 +464,7 @@ ctx.beginPath();
      }
      ctx.fillStyle = houseColor;
      ctx.fillRect(150, 350, 600, 500);
+  ctx.stroke();
 //door
      let doorColor;
       if(doorChoice==="brown"){
@@ -488,22 +490,27 @@ ctx.beginPath();
       }
       ctx.fillStyle = doorColor;
       ctx.fillRect(400, 620, 100, 150);
+  ctx.stroke();
 //window1
 let windowColor="#00F7FF"
 ctx.fillStyle =windowColor;
 ctx.fillRect(250, 400, 75, 75);
+  ctx.stroke();
 //window2
 let window2Color="#00F7FF"
 ctx.fillStyle =window2Color;
 ctx.fillRect(575, 400, 75, 75);
+  ctx.stroke();
 //window3
 let window3Color="#00F7FF"
 ctx.fillStyle =window3Color;
 ctx.fillRect(250, 620, 75, 75);
+  ctx.stroke();
 //window4
 let window4Color="#00F7FF"
 ctx.fillStyle =window4Color;
 ctx.fillRect(575, 620, 75, 75);
+  ctx.stroke();
 //doorknob
   let doorknobColor= "#FFFF00" 
   ctx.beginPath();
