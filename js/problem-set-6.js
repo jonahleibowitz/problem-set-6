@@ -160,7 +160,7 @@ ctx.clearRect(0, 0, canvas.width, canvas.height);
 let leftSide= Number(prompt("Please enter left side length."));
 let bottomSide= Number(prompt("Please enter bottom side length."));
 let hypotenuse= Number(prompt("Please enter hypotenuse."));
-if((leftSide**2)+(bottomSide**2)!=(hypotenuse**2)){
+if(((leftSide**2)+(bottomSide**2)!=(hypotenuse**2)) || leftSide=0 || bottomSide=0 || hypotenuse=0 || canvas.width-10-bottomSide<0 || canvas.height-10-leftSide>=0{
   alert("That is not a valid right triangle");
 }
 else {
