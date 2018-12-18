@@ -325,24 +325,23 @@ function drawStopSign() {
   let ctx = canvas.getContext('2d');
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   
-  let sideLength= 80;
- let center;
-  
+  let signSide=80;
+  let center=[10+(signSide)/2+signSide/Math.sqrt(2), 10+(signSide/2)+(signSide/Math.sqrt(2))]
   let points=8;
-  let pointX=[];
-  let pointY=[];
-  
-   for(let i=0;i<8;i++){
-    pointX.push(Math.cos(((Math.PI*2*i)/points)-Math.PI/8)*100+center[0]);
-    pointY.push(Math.sin(((Math.PI*2*i)/points)-Math.PI/8)*100+center[1]);
+  let pointx=[];
+  let pointy=[];
+
+  for(let i=0;i<points;i++){
+    pointx.push(Math.cos(((Math.PI*2*i)/points)-Math.PI/8)*100+center[0]);
+    pointy.push(Math.sin(((Math.PI*2*i)/points)-Math.PI/8)*100+center[1]);
    }
-   ctx.beginPath();
-  ctx.moveTo([pointx][0], pointy[0]);
-  for(let j=0;j<pointx.length;j++){
-    ctx.lineTo(pointx[j], pointy[j]);
-  }
-  ctx.lineTo(pointx[0], pointy[0]);
-  ctx.stroke();
+    ctx.beginPath();
+   ctx.moveTo([pointx][0], pointy[0]);
+   for(let j=0;j<pointx.length;j++){
+       ctx.lineTo(pointx[j], pointy[j]);
+   }
+    ctx.lineTo(pointx[0], pointy[0]);
+    ctx.stroke();
 
   ctx.fillStyle="red";
   ctx.fill();
@@ -353,6 +352,7 @@ function drawStopSign() {
   ctx.fillStyle="white";
   ctx.fillText("STOP", center[0], center[1]+15);
   ctx.closePath()
+  
 }
 
 /*
