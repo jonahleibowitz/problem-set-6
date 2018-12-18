@@ -45,37 +45,19 @@ function sayHello() {
 
 function drawRectangle() {
 
-  const canvas = document.getElementById('canvas2');
-  const ctx = canvas.getContext('2d');
-ctx.clearRect(0, 0, canvas.width, canvas.height);
-  
-let coordX= Number(prompt("Please enter an X coordinate greater than or equal to 5."));
-while(true){
-  if(coordX>=5 && coordX<=1024 && Number.isInteger(coordX)){
-    break;
+  let canvas = document.getElementById('canvas2');
+  let ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
+  while(true){
+    var width=Number(prompt("Enter width"))
+    var height=Number(prompt("Enter height"))
+    var x=Number(prompt("Enter x coordinate for starting point."))
+    var y=Number(prompt("Enter y coordinate for starting point."))
+    if(width>=1 && height>=1 && x>=5 && y>=5 && canvas.width-x-width>=0 && canvas.height-y-height>=0){
+      break;
+    }
   }
-}
-let coordY= Number(prompt("Please enter a Y coordinate greater than or equal to 5."));
-while(true){
-  if(coordY>=5 && coordY<=512 && Number.isInteger(coordY)){
-    break;
-  }
-}
-let width= Number(prompt("Please enter a width greater than or equal to 1."));
-while(true){
-  if(width>=1 && width<=1024 && Number.isInteger(width)){
-    break;
-  }
-}
-let height= Number(prompt("Please enter a height greater than or equal to 1."));
-while(true){
-  if(height>=1 && height<=512 && Number.isInteger(height)){
-    break;
-  }
-}
-  ctx.rect(coordX, coordY, width, height);
-  ctx.stroke();
-
+  ctx.strokeRect(x, y, width, height);
 }
 
 /*
